@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="tituloCadastro">Cadastro de Cidades</h1>
+
+    <input type="text" name="nome" id="nome" placeholder="Insira o nome da cidade">
+    <input type="text" name="estado" id="estado" placeholder="Insira o estado">
+    <input type="text" name="sigla" id="sigla" placeholder="Insira a sigla">
+    
+    <br>
+    <br>
+    <button type="button" onclick="novaCidade()">Salvar</button>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h1 class="tituloSelect">Cidades cadastradas</h1>
+    <select name="selectCidade" id="selectCidade">
+        <option value="default" selected>Selecione...</option>
+    </select>
+
+    <button type="button" onclick="confirmarCidade()">Adicionar a lista</button>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h1 class="tituloLista">Lista de cidades</h1>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Sigla</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="index.js"></script>
+</body>
+</html>
