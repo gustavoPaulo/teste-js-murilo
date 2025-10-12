@@ -1,3 +1,9 @@
-# Projeto de estudo com JavaScript
+# Projeto de estudo com JavaScript, HTML e CSS
 
-`Abc`
+Exemplos e estudo prático de JS
+
+## 🚀 Começando
+
+```
+Exemplos
+```
