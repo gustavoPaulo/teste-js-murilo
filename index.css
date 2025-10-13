@@ -1,21 +1,14 @@
 .tituloCadastro {
     color: green;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /*font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
 }
 
 .tituloSelect {
     color: blue;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    /*font-family: Georgia, 'Times New Roman', Times, serif;*/
 }
 
 .tituloLista {
     color: red;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-table, th, td {
-    border-collapse: collapse;
-    border: 2px solid black;
-    padding: 5px;
-    font-family: 'Courier New', Courier, monospace;
+    /*font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
 }

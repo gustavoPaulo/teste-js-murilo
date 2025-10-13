@@ -4,6 +4,7 @@ function Cidade(nome, estado, sigla) {
     this.sigla = sigla;
 }
 var cidadesNaLista = [];
+var idObj = 1;
 
 function novaCidade() {
     var cidade = document.getElementById('nome').value;
@@ -77,14 +78,41 @@ function adicionarCidadeTabela(cidade, estado, sigla) {
     const colunaNome = document.createElement("td");
     const colunaEstado = document.createElement("td");
     const colunaSigla = document.createElement("td");
+    const colunaAcoes = document.createElement("td");
 
     colunaNome.textContent = cidade;
     colunaEstado.textContent = estado;
     colunaSigla.textContent = sigla;
 
+    colunaAcoes.innerHTML = `<i class="bi bi-trash-fill" id="${idObj}" data-bs-toggle="tooltip" title="Excluir"></i>`;
+    idObj++;
+
     novaLinha.appendChild(colunaNome);
     novaLinha.appendChild(colunaEstado);
     novaLinha.appendChild(colunaSigla);
+    novaLinha.appendChild(colunaAcoes);
 
     tbody.appendChild(novaLinha);
+}
+
+addEventListener("click", function (event) {
+    if (event.target.classList.contains("bi-trash-fill")) {
+        let id = event.target.id;
+        let cidade = cidadesNaLista[(id == 1 ? 0 : id - 1)];
+
+        let confirmacao = confirm(`Tem certeza que deseja excluir a cidade '${cidade.nome}'? Esta ação não pode ser desfeita.`);
+
+        if (confirmacao) {
+            deleteCidade(event, cidade);
+        } else {
+            alert("Exclusão cancelada.");
+        }
+    }
+});
+
+function deleteCidade(event, cidade) {
+    let index = cidadesNaLista.indexOf(cidade);
+    cidadesNaLista.splice(index, 1);
+    event.target.parentNode.parentNode.remove();
+    alert("Cidade removida da lista com sucesso!");
 }
