@@ -37,3 +37,15 @@ function novaCidade() {
 
     alert("Cidade cadastrada com sucesso!");
 }
+
+function isVogal() {
+  // A expressão regular verifica se o caractere é uma vogal
+  // A flag 'i' torna a verificação insensível a maiúsculas e minúsculas
+  // Expressão regular -> /[aeiou]/i.test(letra)
+
+  // Recupera o valor do input
+  var letra = document.getElementById('frase1').value;
+
+  // Verifica se o caractere digitado é uma vogal e retorna true ou false
+  return /[aeiou]/i.test(letra);
+}
