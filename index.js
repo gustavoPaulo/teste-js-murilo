@@ -12,7 +12,7 @@ function novaCidade() {
     var sigla = document.getElementById('sigla').value;
 
     if (cidade == "" || estado == "" || sigla == "") {
-        alert("Todos os campos devem ser preenchidos!");
+        alertMessage('danger', 'Atenção!', 'Todos os campos devem ser preenchidos!');
         return;
     }
 
@@ -28,7 +28,7 @@ function novaCidade() {
     document.getElementById('estado').value = "";
     document.getElementById('sigla').value = "";
 
-    alert("Cidade cadastrada com sucesso!");
+    alertMessage('success', 'Sucesso!', 'Nova cidade cadastrada.');
 }
 
 function confirmarCidade() {
@@ -40,7 +40,7 @@ function confirmarCidade() {
     var estado = cidadeSelected.options[cidadeSelected.selectedIndex].title;
 
     if (sigla == "default") {
-        alert("É preciso selecionar uma cidade!");
+        alertMessage('info', 'Atenção!', 'É preciso selecionar uma cidade!');
         return;
     }
 
@@ -52,7 +52,7 @@ function confirmarCidade() {
     } else {
         for (let i = 0; i < cidadesNaLista.length; i++) {
             if (cidadesNaLista[i].nome == cidadeAtual.nome) {
-                alert("'" + cidadesNaLista[i].nome + "'" + " já está cadastrada na lista!");
+                alertMessage('info', 'Atenção!', "'" + cidadesNaLista[i].nome + "'" + " já está cadastrada na lista!");
                 document.getElementById('selectCidade').value = "default";
                 return;
             }
@@ -63,7 +63,7 @@ function confirmarCidade() {
     adicionarCidadeTabela(cidadeAtual.nome, cidadeAtual.estado, cidadeAtual.sigla);
     document.getElementById('selectCidade').value = "default";
 
-    alert("Cidade adicionada na lista com sucesso!");
+    alertMessage('success', 'Sucesso!', 'Cidade adicionada na lista.');
 }
 
 function adicionarCidadeTabela(cidade, estado, sigla) {
@@ -101,7 +101,7 @@ addEventListener("click", function (event) {
         if (confirmacao) {
             deleteCidade(event, cidade);
         } else {
-            alert("Exclusão cancelada.");
+            alertMessage('info', 'Informação!', 'A exclusão foi cancelada.');
         }
     }
 });
@@ -110,5 +110,19 @@ function deleteCidade(event, cidade) {
     let index = cidadesNaLista.indexOf(cidade);
     cidadesNaLista.splice(index, 1);
     event.target.parentNode.parentNode.remove();
-    alert("Cidade removida da lista com sucesso!");
+    alertMessage('success', 'Sucesso!', 'Cidade removida da lista');
+}
+
+function alertMessage(alertClass, tipo, mensagem) {
+    const alertMessageHtml = `
+    <div class="alert alert-${alertClass} alert-dismissible fade show" role="alert" id="div-alert-message">
+        <strong>${tipo}</strong> ${mensagem}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    `;
+    document.getElementById('campo-mensagem').innerHTML = alertMessageHtml;
+
+    setTimeout(function() {
+        document.getElementById("div-alert-message").style.display = "none";
+    }, 5000);
 }
