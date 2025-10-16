@@ -29,10 +29,6 @@ function novaCidade() {
     document.getElementById('sigla').value = "";
 
     alert("Cidade cadastrada com sucesso!");
-    console.log("Nova cidade cadastrada");
-    console.log("Cidade: " + cidade);
-    console.log("Estado: " + estado);
-    console.log("Sigla: " + sigla);
 }
 
 function confirmarCidade() {
