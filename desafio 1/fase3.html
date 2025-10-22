@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 3</title>
+</head>
+
+<body>
+    <input type="number" name="numeroa" id="numeroa" placeholder="Digite o primeiro número">
+    <input type="number" name="numerob" id="numerob" placeholder="Digite o segundo número">
+    <button type="button" onclick="verificarNumeros()">Verificar</button>
+    <br>
+    <br>
+    <br>
+    <input id="resultado" placeholder="resposta">
+    <script> function verificarNumeros() {
+            const numeroa = parseFloat(document.getElementById(numeroa).value);
+            const numerob = parseFloat(document.getElementById(numerob).value);
+            const resultado = (document.getElementById(resultado).value);
+            if (numeroa > numerob) {
+                resultado.textContent = `O número ${numeroa} é maior que o ${numeroB}.`;
+            }
+            else (numerob > numeroa)
+            { resultado.textContent = `O número ${numerob} é maior que o ${numeroa}.`; }
+
+            document.getElementById(verificarNumeros).value = resultado;
+        }
+
+
+
+    </script>
+</body>
+
+</html>

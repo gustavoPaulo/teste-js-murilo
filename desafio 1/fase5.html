@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 5</title>
+</head>
+
+<body>
+    <h1>Crie uma frase abaixo</h1>
+    <input type="text" name="frase 1" id="frase1">
+    <br>
+    <br>
+    <br>
+    <input type="text" name="resultado" id="resultado" placeholder="resultado">
+    <button type="button" onclick="analisarFrase()">Analisar</button>
+<script> 
+    function analisarFrase () {
+        const frase = document.getElementById('resultado').value;
+        const totalcaracteres = frase.lenght;
+         const vogais = frase.match(/[aeiouáéíóúâêîôûãõàäëïöü]/gi) || [];
+      const consoantes = frase.match(/[bcdfghjklmnpqrstvwxyz]/gi) || [];
+      const espacos = frase.match(/ /g) || []; 
+
+      const resultado = `
+        <p>Total de caracteres: ${totalcaracteres}</p>
+        <p>Vogais: ${vogais.length}</p>
+        <p>Consoantes: ${consoantes.length}</p>
+        <p>Espaços: ${espacos.length}</p> 
+        `;
+              document.getElementById('resultado').innerHTML = resultado;
+
+    }
+</script>
+</body>
+
+</html>
