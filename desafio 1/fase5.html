@@ -9,16 +9,19 @@
 
 <body>
     <h1>Crie uma frase abaixo</h1>
-    <input type="text" name="frase 1" id="frase1">
+    
+    <input type="text" name="frase1" id="frase1">
     <br>
     <br>
     <br>
-    <input type="text" name="resultado" id="resultado" placeholder="resultado">
+    
+    <p id="resultado"> </p>
+    
     <button type="button" onclick="analisarFrase()">Analisar</button>
 <script> 
     function analisarFrase () {
-        const frase = document.getElementById('resultado').value;
-        const totalcaracteres = frase.lenght;
+        const frase = document.getElementById('frase1').value;
+        const totalcaracteres = frase.length;
          const vogais = frase.match(/[aeiouáéíóúâêîôûãõàäëïöü]/gi) || [];
       const consoantes = frase.match(/[bcdfghjklmnpqrstvwxyz]/gi) || [];
       const espacos = frase.match(/ /g) || []; 

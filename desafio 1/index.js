@@ -1,10 +1,9 @@
 function calcularimc() {
     const peso = (document.getElementById('peso').value);
-    const altura = (document.getElementById('altura').value);
+    const altura = (document.getElementById('altura').value / 100);
     const resultado = document.getElementById('resultado');
-}
 
-const imc = peso / (altura * altura);
+    const imc = peso / (altura * altura);
 let classificacao = "";
 
 if (imc < 18.5) {
@@ -17,25 +16,28 @@ if (imc < 18.5) {
     classificacao = "Obesidade grau I";
 } else if (imc < 39.9) {
     classificacao = "Obesidade grau II";
-} else (imc < 40); {
+} else if (imc < 40) {
     classificacao = "Obesidade grau III";
 }
-resultado.textContent = "Seu IMC é ${imc.toFixed(2)} (${classificacao})";
-
-const idade = (document.getElementById('idade').value); {
+resultado.textContent = `Seu IMC é ${imc.toFixed(2)} (${classificacao})`;
+}
+function idade () {
+const idade = (document.getElementById('idade').value) 
+    let faixaetaria = "";
     if (idade <= 12) {
         faixaetaria = "Criança";
     }
-    else if (idade => 13 && idade <= 17) {
+    else if (idade >= 13 && idade <= 17) {
         faixaetaria = "Adolescente";
     }
-    else if (idade => 18 && idade <= 59) {
+    else if (idade >= 18 && idade <= 59) {
         faixaetaria = "Adulto";
     }
-    else if (idade => 60 && idade <= 99) {
+    else if (idade >= 60 && idade <= 99) {
         faixaetaria = "Idoso";
     }
+        const linhaidade = document.getElementById("linhaidade");
+linhaidade.textContent = `faixa etaria: ${faixaetaria}`;
+    
 }
-const linhaidade = document.createElement("p");
-linhaidade.textContent = `${idade}`;
-document.getElementById('linhaidade').appendChild(idade);
+

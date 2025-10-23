@@ -10,25 +10,27 @@
 
 <body>
     <h1> Calcule seu IMC</h1>
-    <form action="/" id="formulario">
-        <label for="peso"> Peso: </label>
-        <input type="text" id="peso" name="peso">
-        <label for="altura"> Altura: </label>
-        <input type="text" id="altura" name="altura">
-        <button type="submit" onclick="calcularIMC()">Calcular</button>
-    </form>
-    <script src="index.js"></script>
+    <label for="peso"> Peso: </label>
+    <input type="text" id="peso" name="peso">
+    <label for="altura"> Altura: </label>
+    <input type="text" id="altura" name="altura">
+    <button type="submit" onclick="calcularimc()">Calcular</button>
+
     <p id="resultado"></p>
+
     <br>
     <br>
     <br>
+
     <p>Classificação de faixa etária:</p>
+    
     <label for="idade"> Digite sua idade: </label>
     <input type="text" id="idade" name="idade">
-    <button type="submit" onclick="idade()">Enviar</button>
+    <button onclick="idade()">Enviar</button>
+    
     <p id="linhaidade">
     </p>
-
+    <script src="index.js"></script>
 </body>
 
 </html>
