@@ -19,13 +19,13 @@
     <input id="resultado" placeholder="resposta">
 
     <script> function verificarNumeros() {
-            const numeroa = (document.getElementById('numeroa').value);
-            const numerob = (document.getElementById('numerob').value);
-            let resultado = (document.getElementById('resultado').value);
+            const numeroa = Number(document.getElementById('numeroa').value);
+            const numerob = Number(document.getElementById('numerob').value);
+            let resultado = Number(document.getElementById('resultado').value);
             if (numeroa > numerob) {
                 resultado = `O número ${numeroa} é maior que o ${numerob}.`;
             }
-            else (numerob > numeroa)
+            else if (numerob > numeroa)
             { resultado = `O número ${numerob} é maior que o ${numeroa}.`; }
 
             document.getElementById('resultado').value = resultado;

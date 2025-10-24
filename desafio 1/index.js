@@ -16,7 +16,7 @@ if (imc < 18.5) {
     classificacao = "Obesidade grau I";
 } else if (imc < 39.9) {
     classificacao = "Obesidade grau II";
-} else if (imc < 40) {
+} else {
     classificacao = "Obesidade grau III";
 }
 resultado.textContent = `Seu IMC é ${imc.toFixed(2)} (${classificacao})`;
