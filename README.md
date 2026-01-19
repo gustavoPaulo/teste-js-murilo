@@ -1,11 +1,9 @@
 # Projeto de estudo com JavaScript, HTML e CSS
 
-Exemplos e estudo prático de JS
+## 🚀 Projetos iniciados
 
-## 🚀 Começando
+* [Desafio 1](/desafio%201/README.md)
 
-```
-const tbody = document.querySelector("tbody");
-```
+* Exemplo de CRUD com HTML, JavaScript, CSS e Bootstrap 5 [exemplo-crud](/exemplo-crud/index.html).
 
-Esse comando select no corpo do HTML o elemente que representa o corpo de uma tabela, possibilitando inserir linhas e colunas.
+* Exemplo de tabela dinamica com HTML, JavaScript e CSS [exemplo-tabela-dinamica](/exemplo-tabela-dinamica/cidade.html).
