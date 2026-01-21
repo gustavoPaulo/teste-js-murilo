@@ -28,7 +28,14 @@ function novaCidade() {
     document.getElementById('estado').value = "";
     document.getElementById('sigla').value = "";
 
-    alertMessage('success', 'Sucesso!', 'Nova cidade cadastrada.');
+    if (document.getElementById('btnSalvar').textContent == 'Editar') {
+        alertMessage('success', 'Sucesso!', 'Cidade atualizada.');
+        document.getElementById('btnSalvar').textContent = 'Salvar';
+
+    } else {
+        alertMessage('success', 'Sucesso!', 'Nova cidade cadastrada.');
+    }
+    
 }
 
 function confirmarCidade() {
@@ -80,7 +87,8 @@ function adicionarCidadeTabela(cidade, estado, sigla) {
     colunaEstado.textContent = estado;
     colunaSigla.textContent = sigla;
 
-    colunaAcoes.innerHTML = `<i class="bi bi-trash-fill" id="${idObj}" data-bs-toggle="tooltip" title="Excluir"></i>`;
+    colunaAcoes.innerHTML = `<i class="bi bi-trash-fill" id="${idObj}" data-bs-toggle="tooltip" title="Excluir"></i>
+                             <i class="bi bi-pencil-fill" id="${idObj}" data-bs-toggle="tooltip" title="Editar"></i>`;
     idObj++;
 
     novaLinha.appendChild(colunaNome);
@@ -103,6 +111,8 @@ addEventListener("click", function (event) {
         } else {
             alertMessage('info', 'Informação!', 'A exclusão foi cancelada.');
         }
+    } else if (event.target.classList.contains("bi-pencil-fill")) {
+        editCidade(event);
     }
 });
 
@@ -111,6 +121,29 @@ function deleteCidade(event, cidade) {
     cidadesNaLista.splice(index, 1);
     event.target.parentNode.parentNode.remove();
     alertMessage('success', 'Sucesso!', 'Cidade removida da lista');
+}
+
+function editCidade(event) {
+
+    let id = event.target.id;
+    let cidade = cidadesNaLista[(id == 1 ? 0 : id - 1)];
+    
+    document.getElementById('nome').value = cidade.nome;
+    document.getElementById('estado').value = cidade.estado;
+    document.getElementById('sigla').value = cidade.sigla;
+
+    document.getElementById('btnSalvar').textContent = 'Editar';
+
+    let index = cidadesNaLista.indexOf(cidade);
+    cidadesNaLista.splice(index, 1);
+    event.target.parentNode.parentNode.remove();
+    
+    const optionParaRemover = document.querySelector(`option[value="${cidade.sigla}"]`);
+    optionParaRemover.remove();
+
+    idObj--;
+
+    alertMessage('info', 'Aviso!', `Editando a cidade ${cidade.nome}`);
 }
 
 function alertMessage(alertClass, tipo, mensagem) {
